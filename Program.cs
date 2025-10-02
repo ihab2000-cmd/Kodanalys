@@ -2,15 +2,15 @@
 
 namespace Kodanalys
 {
-    class program
+    class Program
     {
         static string[] celestialWhispers = new string[10];
         static int magicConstant = 0;
 
         static void Main(string[] args)
         {
-            bool programHalted = true;
-            while (programHalted)
+            bool running = true;
+            while (running)
             {
                 Console.WriteLine("Välj ett alternativ:");
                 Console.WriteLine("1. Lägg till användare");
@@ -93,7 +93,7 @@ namespace Kodanalys
                 }
                 else if (unicornSparkle == "5")
                 {
-                    programHalted = false;
+                    running = false;
                 }
                 else
                 {
