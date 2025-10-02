@@ -20,86 +20,88 @@ namespace Kodanalys
                 Console.WriteLine("5. Avsluta");
                 string unicornSparkle = Console.ReadLine();
 
-                if (unicornSparkle == "1")
+                switch (unicornSparkle)
                 {
-                    Console.Write("Ange namn: ");
-                    string strUsr = Console.ReadLine();
-                    if (magicConstant < 10)
-                    {
-                        celestialWhispers[magicConstant] = strUsr;
-                        magicConstant++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Listan är full!");
-                    }
-                }
-                else if (unicornSparkle == "2")
-                {
-                    Console.WriteLine("Användare:");
-                    for (int i = 0; i < magicConstant; i++)
-                    {
-                        Console.WriteLine(celestialWhispers[i]);
-                    }
-                }
-                else if (unicornSparkle == "3")
-                {
-                    Console.Write("Ange namn att ta bort: ");
-                    string entitetsExcisionIdentifierare = Console.ReadLine();
-                    int nanoBanana = -1;
-                    for (int i = 0; i < magicConstant; i++)
-                    {
-                        if (celestialWhispers[i] == entitetsExcisionIdentifierare)
+                    case "1":
+                        Console.Write("Ange namn: ");
+                        string strUsr = Console.ReadLine();
+                        if (magicConstant < 10)
                         {
-                            nanoBanana = i;
-                            break;
+                            celestialWhispers[magicConstant] = strUsr;
+                            magicConstant++;
                         }
-                    }
+                        else
+                        {
+                            Console.WriteLine("Listan är full!");
+                        }
+                        break;
 
-                    if (nanoBanana != -1)
-                    {
-                        for (int i = nanoBanana; i < magicConstant - 1; i++)
+                    case "2":
+                        Console.WriteLine("Användare:");
+                        for (int i = 0; i < magicConstant; i++)
                         {
-                            celestialWhispers[i] = celestialWhispers[i + 1];
+                            Console.WriteLine(celestialWhispers[i]);
                         }
-                        magicConstant--;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Användaren hittades inte.");
-                    }
-                }
-                else if (unicornSparkle == "4")
-                {
-                    Console.Write("Ange namn att söka: ");
-                    string nebulousQuery = Console.ReadLine();
-                    bool f00l = false;
-                    for (int i = 0; i < magicConstant; i++)
-                    {
-                        if (celestialWhispers[i] == nebulousQuery)
+                        break;
+
+                    case "3":
+                        Console.Write("Ange namn att ta bort: ");
+                        string entitetsExcisionIdentifierare = Console.ReadLine();
+                        int nanoBanana = -1;
+                        for (int i = 0; i < magicConstant; i++)
                         {
-                            f00l = true;
-                            break;
+                            if (celestialWhispers[i] == entitetsExcisionIdentifierare)
+                            {
+                                nanoBanana = i;
+                                break;
+                            }
                         }
-                    }
-                    if (f00l)
-                    {
-                        Console.WriteLine("Användaren finns i listan.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Användaren hittades inte.");
-                    }
+
+                        if (nanoBanana != -1)
+                        {
+                            for (int i = nanoBanana; i < magicConstant - 1; i++)
+                            {
+                                celestialWhispers[i] = celestialWhispers[i + 1];
+                            }
+                            magicConstant--;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Användaren hittades inte.");
+                        }
+                        break;
+
+                    case "4":
+                        Console.Write("Ange namn att söka: ");
+                        string nebulousQuery = Console.ReadLine();
+                        bool f00l = false;
+                        for (int i = 0; i < magicConstant; i++)
+                        {
+                            if (celestialWhispers[i] == nebulousQuery)
+                            {
+                                f00l = true;
+                                break;
+                            }
+                        }
+                        if (f00l)
+                        {
+                            Console.WriteLine("Användaren finns i listan.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Användaren hittades inte.");
+                        }
+                        break;
+
+                    case "5":
+                        running = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Ogiltigt val.");
+                        break;
                 }
-                else if (unicornSparkle == "5")
-                {
-                    running = false;
-                }
-                else
-                {
-                    Console.WriteLine("Ogiltigt val.");
-                }
-                Console.WriteLine();
+                Console.ReadLine();
             }
         }
     }
